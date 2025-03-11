@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Login() {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,6 +13,10 @@ export default function Login() {
     console.log("Email:", email);
     console.log("Password:", password);
   };
+  
+  const handleSignupRedirect = () =>  {
+    router.push("/signup");
+  }
 
   return (
     <div className="flex h-screen bg-blue-100">
@@ -39,7 +46,9 @@ export default function Login() {
             <span className="px-2 text-black">OR</span>
             <hr className="flex-grow border-gray-300" />
           </div>
-          <button type="submit" className="w-full p-2 bg-gray-200 border border-gray-400 text-black rounded hover:bg-gray-300">Create New Account</button>
+          <button type="button"
+            onClick={handleSignupRedirect}
+            className="w-full p-2 bg-gray-200 border border-gray-400 text-black rounded hover:bg-gray-300">Create New Account</button>
         </form>
       </div>
     </div>
