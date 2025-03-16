@@ -25,7 +25,7 @@ export default function Login() {
         <img src="/logo.jpg" alt="Logo" className="w-500 h-500" />
       </div>
       <div className="w-px h-full bg-gray-300"></div>
-      <div className="w-1/ p-8 ml-auto mr-auto my-auto">
+      <div className="w-1/5 p-8 ml-auto mr-auto my-auto">
         <h1 className="text-5xl text-center font-bold mb-6">Login</h1>
         <form onSubmit={handleSubmit}>
           <input type="email"
